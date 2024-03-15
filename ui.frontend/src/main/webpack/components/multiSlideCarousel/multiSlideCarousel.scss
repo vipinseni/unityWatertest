@@ -1,0 +1,527 @@
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+.multiSlideCarousel {
+    .slick {
+        &-track {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        &-slide {
+            display: flex;
+            flex-wrap: wrap;
+            float: none;
+            height: auto;
+
+            .cmp-carousel__item,
+            .cmp-carousel__item .teaser,
+            .cmp-carousel__item .teaser .cmp-teaser {
+                height: 100%
+            }
+        }
+    }
+
+    &__demand-skills {
+        .cmp-carousel {
+            position: relative;
+
+            .slick-slider {
+                padding-bottom: 3rem;
+            }
+
+            .slick-arrow {
+                position: absolute;
+                top: auto;
+                bottom: -10px;
+                left: 0;
+                width: 2rem;
+                height: 2rem;
+                background: transparent;
+                color: var(--black);
+                cursor: pointer;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                z-index: 1;
+
+                &:before {
+                    font-size: 1rem;
+                    display: block;
+                    font-family: 'icomoon';
+                    color: var(--black);
+                }
+
+                &.slick-prev {
+                    &:before {
+                        content: "\e91f";
+                    }
+                }
+
+                &.slick-next {
+                    left: 5rem;
+
+                    &:before {
+                        content: "\e921";
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    &:before {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            .multiItemPagingInfo {
+                position: absolute;
+                bottom: 0.625rem;
+                left: 2.675rem;
+                z-index: 1;
+                color: var(--black);
+                font-size: 0.875rem;
+                display: block;
+            }
+
+            .slick-slide {
+                width: 290px;
+
+                &[aria-hidden=false] {
+                    .teaser {
+                        opacity: 1;
+                    }
+                }
+
+                &[aria-hidden=true] {
+                    .teaser {
+                        opacity: 0.1;
+                    }
+                }
+
+                .teaser {
+                    transition-delay: 0.8s;
+                }
+            }
+        }
+
+        .opacity-10 {
+            opacity: 0.1;
+        }
+
+        .opacity-100 {
+            opacity: 1;
+        }
+    }
+
+    &__course-detail {
+        .cmp-carousel {
+            position: relative;
+            padding-bottom: 3rem;
+
+            .slick-arrow {
+                position: absolute;
+                top: auto;
+                bottom: -59px;
+                left: 45%;
+                width: 2rem;
+                height: 2rem;
+                background: transparent;
+                color: var(--black);
+                cursor: pointer;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                z-index: 1;
+
+                @include media-breakpoint-down(md) {
+                    left: 37%;
+                }
+
+                @include media-breakpoint-between(md, lg) {
+                    left: 40%;
+                }
+
+                &:before {
+                    font-size: 1rem;
+                    display: block;
+                    font-family: 'icomoon';
+                    color: var(--black);
+                }
+
+                &.slick-prev {
+                    &:before {
+                        content: "\e91f";
+                    }
+                }
+
+                &.slick-next {
+                    left: 51%;
+
+                    @include media-breakpoint-down(md) {
+                        left: 54%;
+                    }
+
+                    @include media-breakpoint-between(md, lg) {
+                        left: 50%;
+                    }
+
+                    &:before {
+                        content: "\e921";
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    &:before {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            .multiItemPagingInfo {
+                position: absolute;
+                bottom: 0.625rem;
+                left: 48%;
+                z-index: 1;
+                color: var(--black);
+                font-size: 0.875rem;
+
+                @include media-breakpoint-down(md) {
+                    left: 46%;
+                }
+
+                @include media-breakpoint-between(md, lg) {
+                    left: 45%;
+                }
+            }
+
+            .slick-slide {
+                    width: 1000px;
+                    height: 562px;
+                    padding: 10px 4px;
+                    div {
+                        height: 100%;
+                        width: 100%;
+                        .image {
+                            .cmp-image__image {
+                                width: 100%;
+                                object-fit: fill;
+                                height: 100%;
+                            }
+                        }
+                    }
+                    //.cmp-image__image {
+                       // height: 100%;
+                       // object-fit: fill;
+                    //}
+                @include media-breakpoint-down(md) {
+                    width: 300px;
+                    height: 169px;
+                }
+
+                @include media-breakpoint-between(md, lg) {
+                    width: 500px;
+                    height: 281px;
+                }
+                @include media-breakpoint-between(lg, xl) {
+                    width: 700px;
+                    height: 394px;
+                }
+
+
+                &:not(.slick-active) {
+                    opacity: 0.5;
+                }
+
+                &.slick-active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__teaser_no_description,
+    &__teaser_icon_description {
+        .cmp-carousel {
+            position: relative;
+            padding-bottom: 3rem;
+
+            .slick-arrow {
+                position: absolute;
+                top: auto;
+                bottom: -59px;
+                left: 7px;
+                width: 2rem;
+                height: 2rem;
+                background: transparent;
+                color: var(--black);
+                cursor: pointer;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                z-index: 1;
+
+                &:before {
+                    font-size: 1rem;
+                    display: block;
+                    font-family: 'icomoon';
+                    color: var(--black);
+                }
+
+                &.slick-prev {
+                    &:before {
+                        content: "\e91f";
+                    }
+                }
+
+                &.slick-next {
+                    left: 82px;
+
+                    &:before {
+                        content: "\e921";
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    &:before {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            .multiItemPagingInfo {
+                position: absolute;
+                bottom: 0.625rem;
+                left: 47px;
+                z-index: 1;
+                color: var(--black);
+                font-size: 0.875rem;
+            }
+
+            .slick-slide {
+                width: 285px;
+                padding: 10px;
+
+                &[aria-hidden=false] {
+                    .teaser {
+                        opacity: 1;
+                    }
+                }
+
+                &[aria-hidden=true] {
+                    .teaser {
+                        opacity: 0.1;
+                    }
+                }
+
+                &>div {
+                    width: 100%;
+                }
+
+                .teaser {
+                    transition-delay: 0.8s;
+                }
+            }
+
+            & .teaser__related-course {
+                padding-right: 0.5rem;
+                width: 100% !important;
+                margin-bottom: unset !important;
+            }
+        }
+
+        .opacity-10 {
+            opacity: 0.1;
+        }
+
+        .opacity-100 {
+            opacity: 1;
+        }
+
+
+    }
+
+    // &__teaser_relatedcourse{
+    //     .cmp-carousel {
+    //         position: relative;
+    //         padding-bottom: 3rem;
+    //         padding-right: 0.5rem;
+    //         width: 100% !important;
+    //         margin-bottom: unset !important;
+
+    //         .slick-arrow {
+    //             position: absolute;
+    //             top: auto;
+    //             bottom: -59px;
+    //             left: 7px;
+    //             width: 2rem;
+    //             height: 2rem;
+    //             background: transparent;
+    //             color: var(--black);
+    //             cursor: pointer;
+    //             display: flex;
+    //             flex-wrap: wrap;
+    //             align-items: center;
+    //             justify-content: center;
+    //             z-index: 1;
+
+    //             &:before {
+    //                 font-size: 1rem;
+    //                 display: block;
+    //                 font-family: 'icomoon';
+    //                 color: var(--black);
+    //             }
+
+    //             &.slick-prev {
+    //                 &:before {
+    //                     content: "\e91f";
+    //                 }
+    //             }
+
+    //             &.slick-next {
+    //                 left: 82px;
+
+    //                 &:before {
+    //                     content: "\e921";
+    //                 }
+    //             }
+
+    //             &:hover {
+    //                 &:before {
+    //                     font-size: 2rem;
+    //                 }
+    //             }
+    //         }
+
+    //         .multiItemPagingInfo {
+    //             position: absolute;
+    //             bottom: 0.625rem;
+    //             left: 47px;
+    //             z-index: 1;
+    //             color: var(--black);
+    //             font-size: 0.875rem;
+    //         }
+
+    //         .slick-slide {
+    //             // width: 285px;
+    //             padding: 10px;
+
+    //             &[aria-hidden=false] {
+    //                 .teaser {
+    //                     opacity: 1;
+    //                 }
+    //             }
+
+    //             &[aria-hidden=true] {
+    //                 .teaser {
+    //                     opacity: 0.1;
+    //                 }
+    //             }
+
+    //             &>div {
+    //                 width: 100%;
+    //             }
+
+    //             .teaser {
+    //                 transition-delay: 0.8s;
+    //             }
+    //         }
+
+    //     }
+    // }
+
+    &__teaser_icon_description {
+        .cmp-carousel {
+            .cmp-teaser {
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    padding: 2rem calc(1rem - 1px) calc(1rem - 1px) calc(1rem - 1px);
+                    border-left: none;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    border-radius: 0.25rem;
+                    border-top: 0.25rem solid var(--primary);
+                }
+
+                &__image {
+                    @include media-breakpoint-down(md) {
+                        width: 100%;
+                        text-align: -webkit-center;
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                &__content {
+                    @include media-breakpoint-down(md) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                        line-break: normal;
+                    }
+                }
+
+                &__title {
+                    @include media-breakpoint-down(md) {
+                        text-align: center;
+                        font-size: 1rem;
+                        font-style: normal;
+                        margin-bottom: 0;
+                    }
+                }
+
+                &__title-link {
+                    @include media-breakpoint-down(md) {
+                        text-decoration: none;
+                        font-size: 1rem;
+                    }
+                }
+
+               
+                &__action-link {
+                    @include media-breakpoint-down(md) {
+                        width: 100%;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+.seventyPercent-container, .sixtyPercent-container, .fiftyPercent-container {
+    .multiSlideCarousel {
+            &__course-detail {
+                .cmp-carousel {
+                    .slick-slide {
+                        width: 455px;
+                        height: 310px;
+                        padding: 10px 4px;
+                    }
+                }
+            }
+    } 
+}
+.futuretech-theme {
+    .multiSlideCarousel {
+        &__demand-skills {
+            .cmp-carousel {
+                .slick-list {
+                    padding-left: 0.2rem;
+                    padding-bottom:.4rem;
+                }
+            }
+        }
+    }
+}

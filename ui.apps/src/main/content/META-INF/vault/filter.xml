@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/unityWater/clientlibs"/>
+    <filter root="/apps/unityWater/components"/>
+    <filter root="/apps/unityWater/i18n"/>
+</workspaceFilter>

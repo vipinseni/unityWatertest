@@ -1,0 +1,101 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.title {
+    &.text-start {
+        .cmp-title {
+            text-align: left;
+        }
+    }
+    &.text-center {
+        .cmp-title {
+            text-align: center;
+        }
+    }
+    &.text-end {
+        .cmp-title {
+            text-align: right;
+        }
+    }
+    &.text__margin-0 {
+        .cmp-text {
+            margin: 0;
+        }
+    }
+    &.text-newsDetail {
+        .cmp-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            margin-top: 3rem;
+            @include media-breakpoint-down(md) {
+                font-size: 2rem;
+            }
+        }
+    }
+    &.text-colored {
+        .cmp-title__text {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.375rem;
+            margin-top: 3rem;
+            @include media-breakpoint-down(md) {
+                margin-top: 1rem;
+            }
+        }
+    }
+    &.text-courseDetail {
+        .cmp-title {
+                color: var(--black);
+                font-size: 3rem;
+                font-weight: 700;
+                margin-top: 2rem;
+                margin-bottom: 1.5rem;
+                @include media-breakpoint-down(lg)  {
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    &.text-courseDetailColored {
+        .cmp-title {
+            color: var(--secondary);
+            font-size: 1.375rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            .cmp-title__text {
+                font-size: 1.75rem;
+            }
+        }
+        &.text-blackTitle {
+            .cmp-title__text {
+                font-size: 3rem;
+                color: var(--black);
+            }
+        }
+    }
+    &.text-titlePrimaryColor {
+        .cmp-title__text {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.375rem;
+            margin: 1rem;
+        }
+    }
+}
+.futuretech-theme {
+    .title {
+        &.text-titlePrimaryColor {
+            .cmp-title__text {
+                color: var(--greenishyellow);
+            }
+        }
+    }
+}
+

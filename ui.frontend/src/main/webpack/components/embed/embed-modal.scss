@@ -1,0 +1,48 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.embed__modal {
+    opacity: 0;
+    visibility: hidden;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    .modal {
+        z-index: 200;
+        &-dialog {
+            max-width: 85%;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+            @include media-breakpoint-up(md){
+                max-width: 80%;
+            }
+            @include media-breakpoint-between(md,lg){
+                max-width: 90%;
+                position: absolute;
+                top: 100px;
+            }
+        }
+    }
+    &-btnClose {
+        width: 2.5rem;
+        height: 2.5rem;
+        z-index: 1;
+        .icon-cancel {
+            &:before {
+                font-size: 2rem;
+            }
+        }
+    }
+    &-backdrop {
+        opacity: 0.84;
+        z-index: 199;
+    }
+}

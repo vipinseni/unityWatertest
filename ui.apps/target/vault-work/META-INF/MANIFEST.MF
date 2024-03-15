@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Created-By: Apache Jackrabbit FileVault - Package Maven Plugin 1.1.6
+Build-Jdk-Spec: 17
+Implementation-Title: unityWater - UI apps
+Implementation-Version: 0.0.1-SNAPSHOT
+Content-Package-Type: application
+Content-Package-Id: au.edu.unityWater:unityWater.ui.apps:0.0.1-SNAPSHOT
+Content-Package-Description: UI apps package for unityWater
+Content-Package-Roots: /apps/unityWater/clientlibs,/apps/unityWater/comp
+ onents,/apps/unityWater/i18n
+

@@ -1,0 +1,221 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.course-sticky-nav__comp {
+    padding: 2rem 2.5rem;
+    box-shadow: var(--shadow-2);
+    border-radius: 0.25rem;
+    background-color: var(--gray-50);
+
+    @include media-breakpoint-down(lg) {
+        display: flex;
+        padding: 1.75rem 1.5rem;
+        margin: 0 !important;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .button__course-sticky-link {
+        margin-bottom: 0.5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .cmp-button {
+            text-decoration: none;
+            justify-content: left;
+
+            &__text {
+                color: var(--black);
+                font-size: 1rem;
+                font-weight: 700;
+            }
+            &.active {
+                .cmp-button__text {
+                    color: var(--primary);
+                }
+            }
+        }
+    }
+    & .separator {
+        background: var(--black);
+        .cmp-separator__horizontal-rule {
+            width: 100%;
+            background: black;
+            @include media-breakpoint-down(lg) {
+                display: none;
+            }
+        }
+    }
+    .sticky-mob-btn {
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+        @include media-breakpoint-down(lg) {
+            width: fit-content;
+            .cmp-button {
+                border: none;
+                background: none;
+                text-align: left;
+                width: fit-content;
+                font-size: 1rem;
+                font-weight: 700;
+                padding: 0;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                &:after {
+                    content: "\e9db";
+                    font-family: "icomoon";
+                    color: var(--primary);
+                }
+                .cmp-text {
+                    color: var(--primary);
+                    text-wrap: nowrap;
+                }
+            }
+        }
+    }
+    .course-details .button {
+        margin-bottom: 1rem;
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+            .cmp-button {
+                &:after {
+                    content: "";
+                }
+            }
+        }
+        .cmp-button {
+            min-width: 11.25rem;
+            @include media-breakpoint-down(lg) {
+                min-width: 8.5rem;
+            }
+            height: 3rem;
+            padding: unset;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            &:after {
+                content: "\e921";
+                font-family: "icomoon";
+                color: var(--white);
+            }
+            & .cmp-text {
+                margin-right: 0.25rem;
+                font-size: 0.825rem;
+            }
+        }
+    }
+    #stickyContainer {
+        @include media-breakpoint-down(md) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+.container__opendays {
+    @include media-breakpoint-down(lg) {
+        padding: 2rem 2.5rem;
+        box-shadow: var(--shadow-2);
+        border-radius: 0.25rem;
+        background-color: var(--gray-50);
+        display: flex;
+        padding: 1.75rem 1.5rem;
+        margin: 0 !important;
+        align-items: center;
+        justify-content: space-between;
+        .cmp-container {
+            width: 100%;
+        }
+        .openDaysCards {
+            width: 100%;
+            padding: 1.75rem 1.5rem;
+            .open-days-comp{ 
+            }
+        }
+    }
+}
+
+.container__course-sticky-nav + .thirtyPercent-container {
+    position: sticky;
+    @include media-breakpoint-down(md) {
+        top: 5rem;
+    }
+    @include media-breakpoint-between(md, lg) {
+        top: 2.9rem;
+    }
+    & > .cmp-container:first-child {
+        @include media-breakpoint-up(lg) {
+            position: sticky;
+            top: 0;
+        }
+    }
+}
+.futuretech-theme {
+    .course-sticky-nav__comp {
+        .button__course-sticky-link {
+            .cmp-button {
+                &.active {
+                    .cmp-button__text {
+                        color: var(--greenishyellow);
+                        &:hover {
+                            color: var(--gyhover);
+                        }
+                    }
+                }
+            }
+        }
+        .sticky-mob-btn {
+            @include media-breakpoint-down(lg) {
+                .cmp-button {
+                    &:after {
+                        color: var(--greenishyellow);
+                    }
+                    .cmp-text {
+                        color: var(--greenishyellow);
+                        &:hover {
+                            color: var(--gyhover);
+                        }
+                    }
+                }
+            }
+        }
+        .course-details .button {
+            .cmp-button {
+                background: var(--greenishyellow);
+                border: 0.125rem solid var(--greenishyellow);
+                color: var(--black) !important;
+                &:hover {
+                    background: var(--gyhover);
+                    border: 0.125rem solid var(--gyhover);
+                }
+                &:after {
+                    color: var(--black);
+                }
+            }
+        }
+    }
+    .container__course-sticky-nav + .thirtyPercent-container {
+        @include media-breakpoint-down(md) {
+            top: 3.2rem;
+        }
+        @include media-breakpoint-between(md, lg) {
+            top: 0.9rem;
+        }
+    }
+}

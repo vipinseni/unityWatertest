@@ -1,0 +1,120 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+.breadcrumb {
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+.cmp-breadcrumb {
+    width: 100%;
+
+    &__list {
+        width: 100%;
+        display: flex;
+        padding-left: 0rem;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        &:first-child {
+        .cmp-breadcrumb__item-link {
+                padding-left: 0;
+            }
+        }
+        &:hover {
+            &:first-child {
+                &:before {
+                    color: var(--gradient-3);
+                }
+                .cmp-breadcrumb__item-link {
+                    color: var(--gradient-3);
+                }
+            }
+        }
+    }
+
+    &__item-link {
+        color: var(--primary);
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding-left: 0.25rem;
+        text-decoration: none;
+
+        span {
+            white-space: nowrap;
+        }
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 0.25rem;
+        }
+    }
+    &__item--active {
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 40px;
+        margin-left: 0.25rem;
+        span {
+            white-space: nowrap;
+            @include media-breakpoint-between(lg, xl) {
+                white-space: normal;
+                line-height: normal;
+            }
+        }
+    }
+
+    &__item::after {
+        content: "/";
+        margin-left: 0.625rem;
+    }
+
+    &__item:last-child::after {
+        display: none;
+    }
+
+    &__item:first-child {
+        .cmp-breadcrumb__item-link {
+            span {
+                display: none;
+            }
+            &:before {
+                content: "\e9a1";
+                font-family: "icomoon" !important;
+                color: var(--primary);
+                font-size: 1.25rem;
+                margin-right: 0.25rem;
+            }
+            &:hover {
+                &:before {
+                    color: var(--gradient-3);
+                    text-decoration: underline;
+                }
+            }
+        }
+        &:after {
+            display: none;
+        }
+    }
+}
+.futuretech-theme {
+    .cmp-breadcrumb {
+        &__item-link {
+            color: var(--greenishyellow);
+        }
+        &__item:first-child {
+            .cmp-breadcrumb__item-link {
+                &:before {
+                    color: var(--greenishyellow);
+                }
+            }
+        }
+    }
+}

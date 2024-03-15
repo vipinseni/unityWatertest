@@ -1,0 +1,76 @@
+@mixin ButtonWithIcon {
+    display: block;
+    padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    align-items: center;
+    position: relative;
+    &:hover,
+    &:focus {
+        background: var(--gradient);
+        border-color: var(--interactive-3);
+        opacity: 0.92;
+    }
+    
+}
+@mixin primaryButtonWithIcon {
+    background: var(--gradient);
+    border: 0.125rem solid var(--gradient);
+    color: var(--white);
+    &:hover,
+    &:focus {
+        background: var(--gradient);
+        border-color: var(--gradient);
+    }
+    
+}
+@mixin secondaryButtonWithIcon {
+    background: var(--transparent);
+    border: 0.125rem solid var(--gray-600);
+    color: var(--gray-600);
+    &:hover,
+    &:focus {
+        color: var(--white);
+        &:before {
+            color: var(--white);
+        }
+    }
+    
+}
+@mixin buttonActionlink {
+    display: flex;
+    margin: 0 0.8rem 0.8rem 0;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 0.875rem 1rem 0.875rem 1rem;
+    position: relative;
+    align-items: center;
+}
+
+@mixin buttonActionlinkPrimary {
+    color: var(--primary);
+    border-radius: 16px;
+    opacity: 1;
+    text-decoration: none;
+    padding: 5px;
+}
+
+@mixin buttonActionlinkWithIcon {
+    margin-right: 10px;
+    max-width: none !important;
+    padding-right: 40px !important;
+    align-items: center;
+}
+
+@mixin centerWithFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centerWithPosition {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,36 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.news-detail {
+    padding-left: 0;
+    padding-right: 0;
+        .text-newsDetail {
+            @include media-breakpoint-down(md) {
+                margin-top: 3rem;
+            }
+            .cmp-title {
+                font-size: 3rem;
+                font-weight: 700;
+                margin-bottom: 3rem;
+                @include media-breakpoint-down(md) {
+                    font-size: 2rem;
+                }
+            }
+        }
+}
+.newspage{
+    .seventyPercent-container{
+        .cmp-image__image{
+            height: 100%;
+        }
+    }
+}
+
+
+

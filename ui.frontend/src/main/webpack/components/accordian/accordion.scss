@@ -1,0 +1,114 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.accordion {
+	&__v1 {
+		.cmp-accordion {
+			.expandCollapseBtn {
+				cursor: pointer;
+				.cmp-text {
+					margin-right: 0.5rem;
+					font-weight: 500;
+					line-height: 1;
+				}
+				.cmp-icon {
+					width: 1rem;
+					height: 1rem;
+					background: var(--primary);
+					color: var(--white);
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+					&:before {
+						font-size: 0.75rem;
+						content: "\e9db";
+						display: block;
+						line-height: 1;
+						font-family: 'icomoon';
+					}
+				}
+				&.active {
+					.cmp-icon:before {
+						content: "\e9de";
+					}
+				}
+			}
+			&__item {
+				border-top: 1px solid rgba(140, 140, 140, 0.3);
+			}
+			&__button {
+				padding: 0.875rem 0;
+				background: transparent;
+				position: relative;
+				font-size: 1.25rem;
+				font-weight: 500;
+				line-height: 2;
+				border: none;
+				padding-right: 3rem;
+				line-height: 1.75rem;
+				&[aria-expanded="true"] {
+					.cmp-accordion__icon {
+						&:before {
+							content: "\e9de";
+						}
+					}
+				}
+			}
+			&__icon {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				width: 1rem;
+				height: 1rem;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				color: var(--primary);
+				&:before {
+					content: "\e9db";
+					display: block;
+					line-height: 1;
+					font-family: 'icomoon';
+				}
+			}
+			&__panel {
+				padding: 0;
+				& > .container {
+					padding-left: 0;
+					padding-right: 0;
+					max-width: 100%;
+					.cmp-text {
+						padding-right: 2.75rem;
+					}
+				}
+			}
+		}
+	}
+}
+.futuretech-theme {
+	.accordion {
+		&__v1 {
+			.cmp-accordion {
+				.expandCollapseBtn {
+					.cmp-icon {
+						background: var(--greenishyellow);
+						color: var(--black);
+					}
+				}
+				&__icon {
+					color: var(--greenishyellow);
+				}
+			}
+		}
+	}
+}

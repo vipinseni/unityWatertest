@@ -1,0 +1,77 @@
+// Bootstrap
+@import "vendors/bootstrap/functions";
+@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/mixins";
+@import "vendors/bootstrap/utilities";
+
+@import "../core/config";
+html {
+    @each $fontName, $value in $fontFamilyMaping {
+		--font-#{$fontName}: #{$value};
+	}
+	scroll-behavior: smooth;
+	--bs-gutter-x: 1.5rem;
+}
+
+body {
+	&.holmesglen-theme{
+		@each $color, $value in $holmesglenColorTheme {
+			--#{$color}: #{$value};
+		}
+	}
+	&.futuretech-theme{
+		@each $color, $value in $futuretechColorTheme {
+			--#{$color}: #{$value};
+		}
+	}
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: var(--font-aktivGrotesk);
+    font-weight: normal;
+}
+
+@include media-breakpoint-down(md) {
+	@each $key, $val in $mobileTypography {
+		.#{$key} > div > *, #{$key} {
+			@each $ckey, $cval in $val {
+				#{$ckey}: map-get($val, $ckey);
+			}
+		}
+	}
+}
+@include media-breakpoint-up(md) {
+	@each $key, $val in $tabTypography {
+		.#{$key} > div > *, #{$key} {
+			@each $ckey, $cval in $val {
+				#{$ckey}: map-get($val, $ckey);
+			}
+		}
+	}
+}
+@include media-breakpoint-up(xl) {
+	@each $key, $val in $typography {
+		.#{$key} > div > *, #{$key} {
+			@each $ckey, $cval in $val {
+				#{$ckey}: map-get($val, $ckey);
+			}
+		}
+	}
+}
+.root {
+	&.container {
+		max-width: 100%;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+main, .newspage .container__full-width {
+	&.container {
+		max-width: 100%;
+		padding-right: 0;
+		padding-left: 0;
+		.container {
+			float: none !important;
+		}
+	}
+}

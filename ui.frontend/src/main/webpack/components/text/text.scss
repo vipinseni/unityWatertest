@@ -1,0 +1,31 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.text {
+    &.text-start {
+        .cmp-text {
+            text-align: left;
+        }
+    }
+    &.text-center {
+        .cmp-text {
+            text-align: center;
+        }
+    }
+    &.text-end {
+        .cmp-text {
+            text-align: right;
+        }
+    }
+    &.text__margin-0 {
+        .cmp-text {
+            margin: 0;
+        }
+    }
+}

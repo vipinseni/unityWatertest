@@ -1,0 +1,589 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.button {
+    .cmp-button {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+    }
+    &__primary {
+        .cmp-button {
+            background: var(--gradient);
+            border: 0.125rem solid var(--gradient);
+            padding: 0.875rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            &__text {
+                color: var(--white);
+                font-size: 1rem;
+                text-align: center;
+            }
+            &:hover,
+            &:focus {
+                background: var(--interactive-5);
+            }
+            &__icon {
+                display: none;
+            }
+        }
+    }
+    &__primary-circle {
+        width: 2.5rem !important;
+        .cmp-button {
+            background: var(--gradient);
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 50%;
+            height: 4rem;
+            width: 4rem;
+            &__text {
+                font-size: 0;
+            }
+            &:hover {
+                background: var(--interactive-5);
+                border: 1px solid var(--interactive-5);
+                color: var(--interactive-);
+                .cmp-button__icon {
+                    color: var(--white);
+                }
+            }
+            &__icon {
+                background-size: contain;
+                line-height: 0px;
+                font-size: 1rem;
+                color: var(--white);
+            }
+        }
+    }
+    &__primary-with-icon-left {
+        .cmp-button {
+            background: var(--gradient);
+            border: 0.125rem solid var(--gradient);
+            padding: 0.875rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            &__text {
+                color: var(--white);
+                font-size: 1rem;
+            }
+            &:hover,
+            &:focus {
+                background: var(--interactive-5);
+            }
+            &__icon {
+                font-size: 1rem;
+                margin-right: 0.5rem;
+                color: var(--white);
+            }
+        }
+    }
+    &__primary-with-icon-right {
+        .cmp-button {
+            flex-direction: row-reverse;
+            background: var(--gradient);
+            border: 0.125rem solid var(--gradient);
+            padding: 0.875rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            &__text {
+                color: var(--white);
+                font-size: 1rem;
+                @include media-breakpoint-down(md) {
+                font-size: 0.72rem;
+                }
+            }
+            &:hover,
+            &:focus {
+                background: var(--interactive-5);
+            }
+            &__icon {
+                font-size: 1rem;
+                margin-left: 0.5rem;
+                color: var(--white);
+            }
+        }
+    }
+
+    &__secondary {
+        .cmp-button {
+            background: transparent;
+            padding: 0.875rem 1.5rem;
+            border: 0.125rem solid var(--gradient-3);
+            text-decoration: none;
+            border-radius: 0.25rem;
+            &__text {
+                font-size: 1rem;
+                text-align: center;
+                color: var(--gradient-3);
+            }
+            &:hover,
+            &:focus {
+                border-color: var(--primary);
+            }
+            &__icon {
+                display: none;
+            }
+        }
+    }
+    &__secondary-circle {
+        width: 2.5rem !important;
+        .cmp-button {
+            background: transparent;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border: 0.125rem solid var(--gradient-3);
+            border-radius: 50%;
+            height: 4rem;
+            width: 4rem;
+            &__text {
+                font-size: 0;
+            }
+            &:hover {
+                background: var(--gradient-3);
+                border: 1px solid var(--gradient-3);
+                color: var(--interactive-);
+                .cmp-button__icon {
+                    color: var(--white);
+                }
+            }
+            &__icon {
+                background-size: contain;
+                line-height: 0px;
+                font-size: 1rem;
+                color: var(--gradient-3);
+            }
+        }
+    }
+    &__secondary-with-icon-left {
+        .cmp-button {
+            border: 0.125rem solid var(--gradient-3);
+            padding: 0.875rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            background: transparent;
+            padding: 0.875rem 1.5rem;
+
+            &__text {
+                color: var(--gradient-3);
+                font-size: 1rem;
+            }
+            &:hover,
+            &:focus {
+                border-color: var(--primary);
+            }
+            &__icon {
+                font-size: 1rem;
+                margin-right: 0.5rem;
+                color: var(--gradient-3);
+            }
+        }
+    }
+    &__secondary-with-icon-right {
+        .cmp-button {
+            flex-direction: row-reverse;
+            border: 0.125rem solid var(--gradient-3);
+            padding: 0.875rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            background: transparent;
+            padding: 0.875rem 1.5rem;
+            &__text {
+                color: var(--gradient-3);
+                font-size: 1rem;
+            }
+            &:hover,
+            &:focus {
+                border-color: var(--primary);
+            }
+            &__icon {
+                font-size: 1rem;
+                margin-left: 0.5rem;
+                color: var(--gradient-3);
+            }
+        }
+    }
+
+    &__tertiary {
+        .cmp-button {
+            background: transparent;
+            padding: 0.875rem 1.5rem;
+            border: 0.125rem solid var(--gray-300);
+            text-decoration: none;
+            border-radius: 0.25rem;
+            color: var(--gradient-3);
+            &__text {
+                font-size: 1rem;
+                text-align: center;
+            }
+            &:hover,
+            &:focus {
+                border-color: var(--interactive-5);
+                .cmp-button__text {
+                    color: var(--interactive-5);
+                }
+            }
+            &__icon {
+                display: none;
+            }
+        }
+    }
+    &__tertiary-with-icon-left {
+        .cmp-button {
+            border: 0.125rem solid var(--gray-300);
+            padding: 0.875rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            background: transparent;
+            padding: 0.875rem 1.5rem;
+            &__text {
+                color: var(--gradient-3);
+                font-size: 1rem;
+            }
+            &:hover,
+            &:focus {
+                border-color: var(--interactive-5);
+                .cmp-button__icon {
+                    color: var(--interactive-5);
+                }
+                .cmp-button__text {
+                    color: var(--interactive-5);
+                }
+            }
+            &__icon {
+                font-size: 1rem;
+                margin-right: 0.5rem;
+                color: var(--gradient-3);
+            }
+        }
+    }
+    &__tertiary-with-icon-right {
+        .cmp-button {
+            flex-direction: row-reverse;
+            border: 0.125rem solid var(--gray-300);
+            padding: 0.875rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            background: transparent;
+            padding: 0.875rem 1.5rem;
+
+            &__text {
+                color: var(--gradient-3);
+                font-size: 1rem;
+            }
+            &:hover,
+            &:focus {
+                border-color: var(--interactive-5);
+                .cmp-button__icon {
+                    color: var(--interactive-5);
+                }
+                .cmp-button__text {
+                    color: var(--interactive-5);
+                }
+            }
+            &__icon {
+                font-size: 1rem;
+                margin-left: 0.5rem;
+                color: var(--gradient-3);
+            }
+        }
+    }
+
+    &__text-with-icon-left {
+        .cmp-button { 
+            border: 0rem;
+            padding: 0.875rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            background: transparent;
+            padding: 0.875rem 1.5rem;
+            &__text {
+                color: var(--gradient-3);
+                font-size: 1rem;
+            }
+            &:hover,
+            &:focus {
+                .cmp-button__icon {
+                    color: var(--primary);
+                }
+                .cmp-button__text {
+                    color: var(--primary);
+                    text-decoration: underline;
+                }
+            }
+            &__icon {
+                font-size: 1rem;
+                margin-right: 0.5rem;
+                color: var(--gradient-3);
+            }
+        }
+    }
+
+    &__text-with-icon-right {
+        .cmp-button {
+            flex-direction: row-reverse;
+            border: 0rem;
+            padding: 0.875rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            background: transparent;
+            padding: 0.875rem 1.5rem;
+            &__text {
+                color: var(--gradient-3);
+                font-size: 1rem;
+                @include media-breakpoint-down(md) {
+                    font-size: .95rem;
+                    }
+                    @include media-breakpoint-between(md, lg) {
+                        font-size: .77rem;
+                    }
+            }
+            &:hover,
+            &:focus {
+                .cmp-button__icon {
+                    color: var(--primary);
+                }
+                .cmp-button__text {
+                    color: var(--primary);
+                    text-decoration: underline;
+                }
+            }
+            &__icon {
+                font-size: 1rem;
+                margin-left: 0.5rem;
+                color: var(--gradient-3);
+            }
+        }
+    }
+
+    &__social-links {
+        .cmp-button {
+            border: 0;
+            padding: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            color: var(--black);
+        }
+    }
+    &__icon-right {
+        .cmp-button {
+            &__icon {
+                order: 2;
+            }
+            &__text {
+                order: 1;
+            }
+        }
+    }
+    &__icon-left {
+        .cmp-button {
+            &__icon {
+                order: 1;
+            }
+            &__text {
+                order: 2;
+            }
+        }
+    }
+    &__btn-start {
+        display: flex;
+        justify-content: flex-start;
+        .cmp-button {
+            width: auto;
+        }
+    }
+    
+    &__btn-center {
+        display: flex;
+        justify-content: center;
+        .cmp-button {
+            width: auto;
+        }
+    }
+    
+    &__btn-end {
+        display: flex;
+        justify-content: flex-end;
+        .cmp-button {
+            width: auto;
+        }
+    }
+}
+.futuretech-theme {
+    .button {
+        &__primary-with-icon-left, &__primary-with-icon-right {
+            .cmp-button {
+                background: var(--greenishyellow);
+                &__text {
+                    color: var(--black);
+                }
+                &:hover,
+                &:focus {
+                    background: var(--gyhover);
+                }
+                &__icon {
+                    color: var(--black);
+                }
+            }
+        }
+        &__primary{
+            .cmp-button {
+                background: var(--greenishyellow);
+                &__text {
+                    color: var(--black);
+                }
+                &:hover,
+                &:focus {
+                    background: var(--gyhover);
+                }
+            }
+        }
+        &__primary-circle {
+            .cmp-button {
+                background: var(--greenishyellow);
+                &:hover {
+                    background: var(--gyhover);
+                    border: 1px solid var(--gyhover);
+                    color: var(--black);
+                    .cmp-button__icon {
+                        color: var(--black);
+                    }
+                }
+                &__icon {
+                    color: var(--black);
+                }
+            }
+        }
+        &__secondary {
+            .cmp-button {
+                border: 0.125rem solid var(--greenishyellow);
+                &__text {
+                    color: var(--black);
+                    &:hover,
+                    &:focus {
+                        color: var(--gyhover);
+                    }
+                }
+                &:hover,
+                &:focus {
+                    border-color: var(--gyhover);
+                }
+            }
+        }
+        &__secondary-circle {
+            .cmp-button {
+                border: 0.125rem solid var(--greenishyellow);
+                &:hover {
+                    background: var(--gyhover);
+                    border: 1px solid var(--gyhover);
+                    color: var(--black);
+                    .cmp-button__icon {
+                        color: var(--black);
+                    }
+                }
+                &__icon {
+                    color: var(--greenishyellow);
+                }
+            }
+        }
+        &__secondary-with-icon-left, &__secondary-with-icon-right {
+            .cmp-button {
+                border: 0.125rem solid var(--greenishyellow);
+                &__text {
+                    color: var(--black);
+                    &:hover,
+                    &:focus {
+                        color: var(--gyhover);
+                    }
+                }
+                &:hover,
+                &:focus {
+                    border-color: var(--gyhover);
+                }
+                &__icon {
+                    color: var(--greenishyellow);
+                }
+            }
+        }
+        &__tertiary {
+            .cmp-button {
+                color: var(--black);
+                &:hover,
+                &:focus {
+                    border: 2px solid var(--gyhover);
+                    .cmp-button__text {
+                        color: var(--gyhover);
+                    }
+                }
+
+                @include media-breakpoint-down(md) {
+                    &:hover {
+                        border: 2px solid var(--gyhover);
+                        color: var(--gyhover);
+                    }
+                }
+            }
+        }
+        &__tertiary-with-icon-left, &__tertiary-with-icon-right {
+            .cmp-button {
+                &__text {
+                    color: var(--black);
+                }
+                &:hover,
+                &:focus {
+                    border-color: var(--gyhover);
+                    .cmp-button__icon {
+                        color: var(--gyhover);
+                    }
+                    .cmp-button__text {
+                        color: var(--gyhover);
+                    }
+                }
+                &__icon {
+                    color: var(--greenishyellow);
+                }
+            }
+        }
+        &__text-with-icon-left, &__text-with-icon-right {
+            .cmp-button{
+                &__text {
+                    color: var(--greenishyellow);
+                }
+                &:hover,
+                &:focus {
+                    .cmp-button__icon {
+                        color: var(--gyhover);
+                    }
+                    .cmp-button__text {
+                       color: var(--gyhover);
+                    }
+                }
+                &__icon {
+                    color: var(--greenishyellow);
+                }
+            }
+        }
+        &__icon-left, &__icon-right, &____outline-with-icon-left, &____outline-with-icon-right {
+            .cmp-button {
+                color: var(--greenishyellow);
+                &:hover,
+                &:focus {
+                    color: var(--gyhover);
+                }
+            }
+        } 
+    }
+}

@@ -1,0 +1,98 @@
+//Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.pagination{
+    .page_anchor{
+        border: 1px solid #aaa;
+        text-decoration: none;
+        width: 40px;
+        height: 40px;
+        color: black;
+        border-left: none;
+        cursor: pointer;
+        user-select: none;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include media-breakpoint-down(md) {
+            width: 30px;
+            height: 30px;
+            font-size: 0.75rem;
+        }
+        @include media-breakpoint-down(lg){
+            &.prev .cmp-text,
+            &.next .cmp-text{
+                display: none;
+            }
+        }
+        &.prev{
+            color: var(--gradient-3);
+            border: 1px solid #aaa;
+            border-radius: 0.375rem 0 0 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            @include media-breakpoint-up(lg) {
+            width: 8.5rem;
+            }
+
+            .cmp-icon{
+                font-size: 1.5rem;
+                @include media-breakpoint-down(md) {
+                    font-size: 1rem;
+                }
+            }
+        }
+        &.next{
+            color: var(--gradient-3);
+            border-radius: 0 0.375rem 0.375rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            @include media-breakpoint-up(lg) {
+                width: 8.5rem;
+            }
+
+            .cmp-icon{
+                font-size: 1.5rem;
+                @include media-breakpoint-down(md) {
+                    font-size: 1rem;
+                }
+            }
+        }
+        &.active{
+            background: var(--bs-gray-300);
+            text-decoration: underline;
+            font-weight: bolder;
+        }
+        &.btn-disabled{
+            color: var(--gray-300);
+        }
+    }
+    .pagination-list{
+        li{
+            list-style-type: none;
+        }
+    }
+}
+.futuretech-theme {
+    .pagination {
+        .page_anchor {
+            &.prev {
+                color: var(--greenishyellow);
+            }
+            &.next {
+                color: var(--greenishyellow);
+            }
+        }
+    }
+}

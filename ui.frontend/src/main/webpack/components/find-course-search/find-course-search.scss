@@ -1,0 +1,340 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.find-course-search {
+    &__content-area {
+        z-index: 10;
+        background: rgba(0,153,204,.1);
+        position: relative;
+        border-radius: 4px;
+        padding: 2.5rem 1rem;
+        box-shadow: var(--shadow);
+        @include media-breakpoint-up(lg) {
+            padding: 3.125rem 5rem;
+        }
+    }
+    &__title {
+        margin-bottom: 1.5rem;
+        text-align: center;
+        .cmp-title > * {
+            margin: 0;
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include media-breakpoint-up(lg) {
+            flex-wrap: nowrap;
+        }
+    }
+    &-comp {
+        padding: 0.938rem 0;
+        @include media-breakpoint-down(md) {
+            padding: 2.3rem 0;
+        }
+        &__searchInput {
+            width: 100%;
+            margin-bottom: 1rem;
+            @include media-breakpoint-up(lg) {
+                width: 50%;
+                margin-bottom: 0;
+            }
+            @include media-breakpoint-up(xxl) {
+                width: 60%;
+            }
+            .cmp-button__icon{
+                color: var(--primary);
+            }
+            input,
+            input:focus {
+                color: var(--primary);
+                box-shadow: none;
+                border-color: var(--text);
+                padding: 1rem 1rem 1rem 2.5rem;
+                @include media-breakpoint-down(lg) {
+                    border-radius: 0;
+                    border: none;
+                }
+                // @include media-breakpoint-up(lg) {
+                //     border-right: transparent;
+                //     border-top-right-radius: 0;
+                //     border-bottom-right-radius: 0;
+                // }
+                &::placeholder {
+                    color: var(--gray-500);
+                    opacity: 1;
+                }
+                &:-ms-input-placeholder {
+                    color: var(--gray-500);
+                }
+                &::-ms-input-placeholder {
+                    color: var(--gray-500);
+                }
+            }
+        }
+        &__campusLocation {
+            width: 50%;
+            margin-bottom: 1.5rem;
+            @include media-breakpoint-up(lg) {
+                width: 20%;
+                padding-right: 0;
+                margin-bottom: 0;
+                margin-left: -1px;
+                .select2-selection {
+                    border-left: transparent !important;
+                    border-radius: 0;
+                    border-bottom-right-radius: 0.25rem;
+                    border-top-right-radius: 0.25rem;
+                }    
+            }
+            @include media-breakpoint-up(xxl) {
+                width: 10%;
+            }
+            select {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid var(--text);
+                border-radius: 0;
+            }
+        }
+        &__courseType {
+            width: 50%;
+            padding-left: 10px;
+            margin-bottom: 1.5rem;
+            @include media-breakpoint-up(lg) {
+                width: 15%;
+                padding-left: 0;
+                margin-bottom: 0;
+                margin-left: -1px;
+                .select2-selection {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                    border-left: transparent !important;
+                }
+            }
+        }
+        &__courseType,
+        &__campusLocation {
+            select {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid var(--text);
+                border-radius: 0;
+            }
+        }
+
+        .button__search-course {
+            font-weight: 700;
+            width: 100%;
+            @include media-breakpoint-up(lg) {
+                margin-left: 2rem;
+                width: auto;
+            }
+            .cmp-button {
+                padding: 1rem 1.5rem !important;
+                width: 100%;
+            }
+        }
+        &__autosuggestions {
+            top: 100%;
+            left: 0;
+            background: #fff;
+            list-style: none;
+            box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.1);
+            border-bottom-left-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+            z-index: 100;
+            max-height: 15rem;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: rgba($color: $gray-100, $alpha: 0.1);
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba($color: $black, $alpha: 0.4);
+                outline: 0;
+            }
+
+              
+            ul{
+                padding: 0;
+                margin:0;
+                margin-top: 1rem;
+            & li {
+                padding: 0.8rem 1rem;
+                padding-top: 0;
+                width: 100%;
+                text-align: left;
+                color: var(--gray-1);
+                list-style: none;
+                cursor: pointer;
+                font-family: var(--font-medium);
+                &:not(:last-child) {
+                    border-bottom: 1px solid var(--light);
+                }
+                &:hover {
+                    background: var(--light);
+                    color: var(--primary);
+                }
+                &.selected {
+                    background: var(--gray-2);
+                    color: #fff;
+                }
+            }
+        }
+        
+        }
+    }
+    .select2 {
+        &-container {
+            width: 100% !important;
+            &--open {
+                .select2-selection {
+                    &:before {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 15L12 9L18 15' stroke='%230099CC' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+                    }
+                }
+                .select2-selection__rendered {
+                    color: var(--primary);
+                }
+            }
+        }
+        &-selection {
+            @include media-breakpoint-down(lg) {
+                border-top: 0;
+                border-right: 0;
+                border-left: 0;
+            }
+            border-color: transparent;
+            padding: 0.485rem 0.75rem;
+            height: auto;
+            padding-left: 30px;
+            @include media-breakpoint-up(lg) {
+                border: 1px solid var(--text);
+                padding: 1rem 1rem 1rem 2.5rem;
+            }
+            &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0.875rem;
+                transform: translateY(-50%);
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%230099CC' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 20px;
+                height: 20px;
+            }
+            &__arrow {
+                display: none;
+            }
+            &__rendered {
+                color: var(--primary) !important;
+                line-height: 1.5 !important;
+            }
+        }
+    }
+}
+.select2 {
+    &-dropdown {
+        border: 1px solid var(--text) !important;
+        @include media-breakpoint-down(lg) {
+            border-color: var(--gray-300) !important;
+        }
+        &--below{
+            @include media-breakpoint-up(lg) {
+                border-top: none !important;
+            }
+        }
+        &--above{
+            @include media-breakpoint-up(lg) {
+                border-bottom: none !important;
+            }
+        }
+    }
+    &-results__options {
+        max-height: 260px !important;
+        padding: 0 10px;
+    }
+    &-results__option {
+        font-size: 12px;
+        color: #484848;
+        &:not(:last-child) {
+            border-bottom: none;
+        }
+        &--selected{
+            background-color: var(--gray-100) !important;
+        }
+        &--highlighted{
+            background-color: var(--primary) !important;
+        }
+    }
+}
+.futuretech-theme {
+    .find-course-search {
+        &-comp {
+            &__searchInput {
+                .cmp-button__icon{
+                    color: var(--greenishyellow);
+                }
+                input,
+                input:focus {
+                    color: var(--greenishyellow);
+                }
+            }
+            .button__primary .cmp-button {
+                background: var(--greenishyellow);
+                border: 0.125rem solid var(--greenishyellow);
+                &:hover {
+                    background: var(--gyhover);
+                    border: 0.125rem solid var(--gyhover);
+                }
+                &__text {
+                    color: var(--black);
+                }
+                .text-white {
+                    color: var(--black) !important;
+                }
+            }
+            &__autosuggestions {
+                ul {
+                    li {
+                        &:hover {
+                            color: var(--greenishyellow)
+                        }
+                    }
+                }
+            }
+
+        }
+        .select2 {
+            &-selection {
+                &:before {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%23d6db43' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+                }
+                &__rendered {
+                    color: var(--greenishyellow) !important;
+                }
+            }
+        }
+    }
+    .select2 {
+        &-results__option {
+            &--highlighted {
+                background-color: var(--greenishyellow) !important;
+                color: var(--black) !important;
+            }
+        }
+    }
+}

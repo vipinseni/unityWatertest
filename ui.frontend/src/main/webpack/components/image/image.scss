@@ -1,0 +1,15 @@
+@use "../../core/mixins";
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.cmp-image {
+	.caption-text {
+		display: none;
+	}
+}

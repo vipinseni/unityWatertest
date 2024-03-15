@@ -1,0 +1,102 @@
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.teaser__formpagebanner{
+    .cmp-teaser{
+        background: var(--black);
+        position: relative;
+        &__image{
+            display: none;
+            @include media-breakpoint-up(md) {
+                display: block;
+
+               & img {
+                    width: 28%;
+                    margin-top: 25px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    object-fit: contain;
+                    object-position: bottom;
+                    z-index: 9;
+
+                    @include media-breakpoint-up(md) {
+                        width: 42%;
+                    }
+
+                    @include media-breakpoint-up(xxl) {
+                        width: 32%;
+                    }
+
+                    @include media-breakpoint-up(xxxl) {
+                        width: 25%;
+                    }
+                }
+            }
+        }
+        &__content {
+            width: 100%;
+            max-width: 100%;
+            color: var(--white);
+            padding: 3rem var(--bs-gutter-x, 0.75rem) 1.5rem;
+            margin-right: auto;
+            margin-left: auto;
+            .cmp-title__text{
+                font-size: 2.25rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+            }
+
+            &-course, &-streamSubHeading{
+                font-size: 1.75rem;
+                line-height: 1.5rem;
+                font-weight: 400;
+                @include media-breakpoint-down(md) {
+                    font-size: 1.5rem;
+                }
+            }
+            &-courseCode,&-cricosCode,&-eventFormDesc{
+               font-size: 1rem;
+                font-weight: 400;
+            }
+
+            @include media-breakpoint-up(md) {
+
+                display: flex;
+                flex-direction: column;
+                max-width: 720px;
+                padding-top: 7rem;
+                background: transparent;
+
+                &-title{
+                    max-width: 80%;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                max-width: 960px;
+                min-height: 350px;
+
+                &-title{
+                    max-width: 80%;
+                }
+            }
+
+            @include media-breakpoint-up(xl) {
+                max-width: 1140px;
+                padding-top: 7rem;
+                min-height: 390px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+                max-width: 1320px;
+            }
+        }
+    }  
+}

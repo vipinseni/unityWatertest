@@ -1,0 +1,51 @@
+@use "../../core/mixins";
+// Bootstrap
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../core/config";
+
+.scrollToTopButton {
+    width: auto !important;
+    .cmp-button {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        font-size: 1.75rem;
+        background-color: #0099CC;
+        color: var(--white);
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 10;
+        transition: opacity 0.5s;
+        opacity: 0;
+        pointer-events: none;
+        @include media-breakpoint-up(lg) {
+            width: 4rem;
+            height: 4rem;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            font-size: 2rem;
+        }
+
+    }
+    .cmp-button.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+.futuretech-theme {
+    .scrollToTopButton {
+        .cmp-button {
+            background-color: var(--greenishyellow);
+            color: var(--black);
+            &:hover {
+                background-color: var(--gyhover);
+            }
+        }
+    }
+}

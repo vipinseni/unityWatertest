@@ -1,0 +1,311 @@
+@import "../../site/vendors/bootstrap/functions";
+@import "../../site/vendors/bootstrap/variables";
+@import "../../site/vendors/bootstrap/mixins";
+@import "../../site/vendors/bootstrap/utilities";
+
+.campus-locations-comp {
+	width: 100%;
+	position: relative;
+	background-color: var(--gray-75);
+
+	&__without-sidebar:not(.edit-mode-enabled) {
+		.campus-locations-comp__list-container,
+		.campus-locations-comp__dropdown-container {
+			display: none;
+		}
+	}
+	&__list-container {
+		height: 100%;
+		position: static;
+
+		@include media-breakpoint-up(lg) {
+			padding: 1rem 0 1rem 1rem;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			z-index: 1;
+			width: fit-content;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+			max-width: 28.875rem;
+			backdrop-filter: blur(4px);
+		}
+
+		@include media-breakpoint-down(lg) {
+			padding: 0 0.75rem;
+			width: 100%;
+		}
+		& > .aem-Grid {
+			@include media-breakpoint-up(lg) {
+				overflow-y: scroll;
+				max-height: 100%;
+			}
+			&::-webkit-scrollbar {
+				width: 5px;
+			}
+			&::-webkit-scrollbar-track {
+				background-color: rgba($color: $black, $alpha: 0.1);
+			}
+			&::-webkit-scrollbar-thumb {
+				background-color: rgba($color: $black, $alpha: 0.4);
+				outline: 0;
+			}
+		}
+
+		.teaserCampusLocation {
+			@include media-breakpoint-down(lg) {
+				&:not(.selectedCampus) {
+					display: none;
+				}
+			}
+		}
+
+		.teaser {
+			@include media-breakpoint-up(lg) {
+				max-width: 26.875rem;
+				box-shadow: var(--shadow-2);
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 0.75rem;
+			}
+
+			.cmp-teaser {
+				flex-direction: column;
+
+				@include media-breakpoint-up(lg) {
+					background: var(--white);
+					border-left: 0.5rem solid transparent;
+					padding: 1.5rem 1.5rem 1.5rem 1rem;
+					border-radius: 4px;
+				}
+
+				&.highlighted {
+					border-left-color: var(--primary);
+					.cmp-teaser__title .cmp-teaser__title-link {
+						font-size: 1.375rem;
+						line-height: 1.5rem;
+					}
+				}
+
+				&__image {
+					width: 5.25rem;
+					height: 5.25rem;
+					overflow: hidden;
+
+					img {
+						width: 5.25rem;
+						height: 5.25rem;
+						object-fit: cover;
+						object-position: center;
+					}
+				}
+
+				&__content {
+					width: calc(100% - 6.25rem);
+				}
+
+				&__title {
+					display: flex;
+					align-content: center;
+					justify-content: flex-start;
+					pointer-events: none;
+				}
+
+				&__title,
+				&__title-link {
+					font-size: 1.125rem;
+					line-height: 1.313rem;
+					font-weight: 700;
+					color: var(--gray-900);
+					text-decoration: none;
+
+					@include media-breakpoint-down(lg) {
+						display: none;
+					}
+
+					img {
+						width: 20px;
+						height: 20px;
+						margin-left: 8px;
+					}
+				}
+
+				&__description {
+					p {
+						color: #111111;
+						font-size: 0.875rem;
+						margin-bottom: 0;
+						line-height: 1.5rem;
+					}
+
+					p:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				&__action-container {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					margin-bottom: 0.5rem;
+				}
+
+				&__action-link {
+					font-size: 0.875rem;
+					text-decoration: none;
+					color: var(--primary);
+					font-weight: 700;
+					padding-right: 1.5rem;
+					position: relative;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					cursor: pointer;
+					width: unset;
+
+					&:hover {
+						text-decoration: underline;
+						text-underline-offset: 0.25rem;
+						color: var(--interactive-3);
+					}
+
+					&:after {
+						display: block;
+						font-family: "icomoon";
+						font-size: 1rem;
+						content: "\e921";
+						position: absolute;
+						right: 0;
+					}
+
+					&:not(:last-child) {
+						margin-right: 0.625rem;
+					}
+				}
+			}
+		}
+	}
+
+	&__dropdown-container {
+		padding: 1rem;
+		@include media-breakpoint-down(lg) {
+			padding: 1rem 0rem;
+		}
+
+		.select2-container {
+			width: 100% !important;
+			@include media-breakpoint-down(lg) {
+				&.active {
+					.selection {
+						position: relative;
+						&::after {
+							background: var(--primary);
+							content: "";
+							left: 0;
+							top: 0;
+							width: 4px;
+							position: absolute;
+							height: 100%;
+						}
+					}
+				}
+			}
+			.selection {
+				.select2-selection {
+					height: 4rem;
+					display: flex;
+					align-items: center;
+					padding: 12px 16px;
+					border-radius: 3px;
+
+					.select2-selection__rendered {
+						width: 100%;
+						color: var(--gray-800);
+						font-weight: 700;
+						@include media-breakpoint-down(lg) {
+							padding-left: 0;
+							padding-right: 0;
+						}
+					}
+
+					.select2-selection__arrow {
+						height: 100% !important;
+						right: 1rem;
+						color: var(--gray-800);
+						font-weight: 700;
+						b {
+							border-color: var(--primary) transparent transparent transparent;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__map-container {
+		width: 100%;
+		min-height: 41.75rem;
+
+		.marker-store-name {
+			margin-bottom: 0.5rem;
+		}
+
+		.marker-store-location {
+			margin-bottom: 0.5rem;
+			.marker-description {
+				p {
+					margin-top: 0;
+					margin-bottom: 0.5rem;
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-down(lg) {
+	.select2-container--open {
+		.select2-dropdown--below {
+			z-index: auto;
+		}
+	}
+}
+
+.futuretech-theme {
+	.campus-locations-comp {
+		&__list-container {
+			.teaser {
+				.cmp-teaser {
+					&__action-link {
+						color: var(--greenishyellow);
+						&:hover {
+							color: var(--gyhover);
+						}
+					}
+				}
+			}
+		}
+		&__dropdown-container {
+			.select2-container {
+				@include media-breakpoint-down(lg) {
+					&.active {
+						.selection {
+							&::after {
+								background: var(--greenishyellow);
+							}
+						}
+					}
+				}
+				.selection {
+					.select2-selection {
+						.select2-selection__arrow {
+							b {
+								border-color: var(--greenishyellow) transparent transparent transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

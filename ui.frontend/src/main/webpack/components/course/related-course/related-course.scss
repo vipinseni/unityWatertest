@@ -1,0 +1,223 @@
+@use "../../../core/mixins";
+//Bootstrap
+@import "../../../site/vendors/bootstrap/functions";
+@import "../../../site/vendors/bootstrap/variables";
+@import "../../../site/vendors/bootstrap/mixins";
+@import "../../../site/vendors/bootstrap/utilities";
+
+// Theme
+@import "../../../core/config";
+
+.course_teaser__card{
+.teaser {
+&__related-course {
+    margin-bottom: 0.5rem;
+    align-self: normal;
+    display: flex;
+    width: 33%;
+    @include media-breakpoint-down(lg) {
+            display: none;
+        &:nth-child(1), 
+        &:nth-child(2), 
+        &:nth-child(3) {
+            display: block;
+          }
+        &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+            display: none !important;
+        }  
+    }
+
+    @include media-breakpoint-down(lg) {
+        width: 100% !important;
+        margin-right: 0rem;
+    }
+    .cmp-teaser {
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+        box-shadow: var(--shadow-2);
+        border-radius: 4px;
+        background: var(--white);
+        flex-wrap: wrap;
+        position: relative;
+
+        @include media-breakpoint-down(xl) {
+            padding: 0.25rem 0.5rem;
+        }
+        @include media-breakpoint-down(lg){
+            padding: 1rem 1.5rem;
+        }
+
+        &__content {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            flex: 1;
+
+            @include media-breakpoint-down(lg) {
+                width: 100%;
+            }
+            .cmp-teaser__button {
+                display: flex;
+                flex-wrap: wrap;
+                .cmp-button {
+                    width: auto;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 1.375rem;
+        }
+
+        &__description {
+            p {
+                margin-bottom: 0;
+            }
+
+            @include media-breakpoint-up(lg) {
+                display: none;
+                visibility: hidden;
+            }
+
+            @include media-breakpoint-down(lg) {
+                visibility: visible;
+                width: 100%;
+                color: var(--gray-400);
+                font-size: 1rem;
+            }
+        }
+
+        &__action-container {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 0.25rem;
+
+            @include media-breakpoint-down(md) {
+                // display: flex;
+                // flex-direction: column;
+                padding: 12px 0px;
+                margin-top: 0;
+            }
+                .cmp{
+                    &-filters{
+                        font-size: 10px;
+                        border: 1px solid var(--primary);
+                        text-decoration: none;
+                        padding: 0.25rem 1.25rem 0.25rem 1.25rem;
+                        text-align: center;
+                        color: var(--primary);
+                        @include media-breakpoint-down(sm) {
+                            padding: 0 10px;
+                        }
+                    }
+                }
+        }
+
+        &__button{
+            .cmp-text{
+                color: var(--primary);
+                font-size: 14px;
+                font-weight: 700;
+            }
+            .cmp-icon{
+                color: var(--primary);
+                font-size: 1.125rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+&__related-course.mobile {
+    width: 19.5%;
+    margin-right: 0;
+    padding-right: 0.3rem;
+
+    .cmp-teaser {
+        padding: 1rem;
+        &__action-container {
+            .cmp {
+                &-filters {
+                    font-size: 12px;
+                    padding: 0 4px;
+                    @include media-breakpoint-down(xl) {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+        &__title {
+            font-size: 1rem;
+            @include media-breakpoint-down(xl) {
+                font-size: 0.875rem;
+            }
+        }
+        &__button{
+            .cmp-text{
+                font-size: 12px;
+            }
+            .cmp-icon{
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+}
+.show-more, 
+.show-less{
+    cursor: pointer;
+    width: auto;
+    margin-right: calc(var(--bs-gutter-x) * 0.5);
+    margin-left: calc(var(--bs-gutter-x) * 0.5);
+    padding: 0;
+    &__icon{
+            color: var(--primary);
+            font-size: 1.3rem;
+    }
+    &__text{
+        color: var(--primary);
+    }
+}
+}
+.futuretech-theme {
+    .course_teaser__card {
+        .teaser {
+            &__related-course {
+                .cmp-teaser {
+                    &__action-container {
+                        .cmp {
+                            &-filters {
+                                border: 1px solid var(--greenishyellow);
+                                color: var(--greenishyellow);
+                            }
+                        }
+                    }
+                    &__button{
+                        .cmp-text{
+                            color: var(--greenishyellow);
+                        }
+                        .cmp-icon {
+                            color: var(--greenishyellow);
+                        }
+                    }
+                }
+            } 
+        }
+        .show-more, 
+        .show-less {
+            &__icon{
+                color: var(--greenishyellow);
+            }
+            &__text{
+                color: var(--greenishyellow);
+         }
+        }
+    }
+}
