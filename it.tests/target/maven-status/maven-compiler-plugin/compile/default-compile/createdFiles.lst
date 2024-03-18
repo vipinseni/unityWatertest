@@ -1,0 +1,4 @@
+au/edu/unityWater/it/tests/GetPageIT.class
+au/edu/unityWater/it/tests/HtmlUnitClient.class
+au/edu/unityWater/it/tests/PublishPageValidationIT.class
+au/edu/unityWater/it/tests/CreatePageIT.class

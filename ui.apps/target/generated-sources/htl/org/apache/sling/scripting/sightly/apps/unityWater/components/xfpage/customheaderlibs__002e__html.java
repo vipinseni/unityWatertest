@@ -35,7 +35,7 @@ public final class customheaderlibs__002e__html extends RenderUnit {
 // Main Template Body -----------------------------------------------------------------------------
 
 Object _global_clientlib = null;
-out.write("\r\n\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"/>\r\n");
+out.write("\n\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"/>\n");
 _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/clientlib.html", obj());
 {
     Object var_templatevar0 = renderContext.getObjectModel().resolveProperty(_global_clientlib, "js");
@@ -47,7 +47,7 @@ _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/c
         }
     }
 }
-out.write("\r\n");
+out.write("\n");
 _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/clientlib.html", obj());
 {
     Object var_templatevar2 = renderContext.getObjectModel().resolveProperty(_global_clientlib, "css");
@@ -59,12 +59,12 @@ _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/c
         }
     }
 }
-out.write("\r\n\r\n\r\n");
+out.write("\n\n\n");
 {
     Object var_resourcecontent4 = renderContext.call("includeResource", "contexthub", obj().with("resourceType", "granite/contexthub/components/contexthub"));
     out.write(renderContext.getObjectModel().toString(var_resourcecontent4));
 }
-out.write("\r\n\r\n");
+out.write("\n\n");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

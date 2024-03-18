@@ -1,0 +1,81 @@
+{
+  "id":"au.edu.unityWater:unityWater.all:slingosgifeature:user-aggregated-publish:0.0.1-SNAPSHOT",
+  "bundles":[
+    {
+      "id":"au.edu.unityWater:unityWater.core:0.0.1-SNAPSHOT",
+      "feature-origins":"au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT",
+      "start-order":"20",
+      "content-package-origins":"au.edu.unityWater:unityWater.all:0.0.1-SNAPSHOT"
+    }
+  ],
+  "configurations":  {
+    "org.apache.sling.commons.log.LogManager.factory.config~unityWater":    {
+      ":configurator:content-package-origins":"au.edu.unityWater:unityWater.all:0.0.1-SNAPSHOT|au.edu.unityWater:unityWater.ui.config:0.0.1-SNAPSHOT",
+      "org.apache.sling.commons.log.names":[
+        "au.edu.unityWater"
+      ],
+      "org.apache.sling.commons.log.level":"INFO",
+      "org.apache.sling.commons.log.file":"logs/error.log",
+      "org.apache.sling.commons.log.additiv":"false",
+      ":configurator:feature-origins-org.apache.sling.commons.log.names":[
+        "au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+      ],
+      ":configurator:feature-origins-org.apache.sling.commons.log.file":[
+        "au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+      ],
+      ":configurator:feature-origins-org.apache.sling.commons.log.level":[
+        "au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+      ],
+      ":configurator:feature-origins-org.apache.sling.commons.log.additiv":[
+        "au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+      ],
+      ":configurator:feature-origins":[
+        "au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+      ]
+    }
+  },
+  "assembled-features:ARTIFACTS|TRANSIENT":[
+    "au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+  ],
+  "content-packages:ARTIFACTS|true":[
+    {
+      "id":"au.edu.unityWater:unityWater.ui.content:zip:cp2fm-converted:0.0.1-SNAPSHOT",
+      "feature-origins":"au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+    },
+    {
+      "id":"au.edu.unityWater:unityWater.ui.config:zip:cp2fm-converted:0.0.1-SNAPSHOT",
+      "feature-origins":"au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+    },
+    {
+      "id":"au.edu.unityWater:unityWater.ui.apps:zip:cp2fm-converted:0.0.1-SNAPSHOT",
+      "feature-origins":"au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+    },
+    {
+      "id":"au.edu.unityWater:unityWater.all:zip:cp2fm-converted:0.0.1-SNAPSHOT",
+      "feature-origins":"au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+    }
+  ],
+  "repoinit:TEXT|true":[
+    "create path (sling:OrderedFolder) /content/dam/unityWater",
+    "create path (nt:unstructured) /content/dam/unityWater/jcr:content",
+    "set properties on /content/dam/unityWater/jcr:content",
+    "  set cq:conf{String} to /conf/unityWater",
+    "  set jcr:title{String} to \"unityWater\"",
+    "end"
+  ],
+  "api-regions:JSON|false":[
+    {
+      "name":"global",
+      "exports":[
+        "au.edu.unityWater.core.filters",
+        "au.edu.unityWater.core.listeners",
+        "au.edu.unityWater.core.models",
+        "au.edu.unityWater.core.schedulers",
+        "au.edu.unityWater.core.servlets"
+      ],
+      "feature-origins":[
+        "au.edu.unityWater:unityWater.all:slingosgifeature:0.0.1-SNAPSHOT"
+      ]
+    }
+  ]
+}
