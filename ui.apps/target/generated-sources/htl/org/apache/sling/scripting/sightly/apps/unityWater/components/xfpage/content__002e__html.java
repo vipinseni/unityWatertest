@@ -35,7 +35,7 @@ public final class content__002e__html extends RenderUnit {
 // Main Template Body -----------------------------------------------------------------------------
 
 Object _global_body = null;
-out.write("\r\n");
+out.write("\n");
 _global_body = renderContext.call("use", "body.js", obj());
 {
     Object var_resourcecontent0 = renderContext.call("includeResource", renderContext.getObjectModel().resolveProperty(_global_body, "resourcePath"), obj().with("selectors", (new Object[] {})));

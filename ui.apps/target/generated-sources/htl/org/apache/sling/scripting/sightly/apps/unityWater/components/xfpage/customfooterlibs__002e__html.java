@@ -35,9 +35,9 @@ public final class customfooterlibs__002e__html extends RenderUnit {
 // Main Template Body -----------------------------------------------------------------------------
 
 Object _global_clientlib = null;
-out.write("\r\n\r\n");
+out.write("\n\n");
 _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/clientlib.html", obj());
-out.write("\r\n    ");
+out.write("\n    ");
 {
     Object var_templatevar0 = renderContext.getObjectModel().resolveProperty(_global_clientlib, "js");
     {
@@ -48,7 +48,7 @@ out.write("\r\n    ");
         }
     }
 }
-out.write("\r\n\r\n\r\n\r\n\r\n\r\n");
+out.write("\n\n\n\n\n\n");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

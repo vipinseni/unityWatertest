@@ -35,9 +35,9 @@ public final class customheaderlibs__002e__html extends RenderUnit {
 // Main Template Body -----------------------------------------------------------------------------
 
 Object _global_clientlib = null;
-out.write("\r\n");
+out.write("\n");
 _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/clientlib.html", obj());
-out.write("\r\n    ");
+out.write("\n    ");
 {
     Object var_templatevar0 = renderContext.getObjectModel().resolveProperty(_global_clientlib, "css");
     {
@@ -48,12 +48,12 @@ out.write("\r\n    ");
         }
     }
 }
-out.write("\r\n\r\n\r\n");
+out.write("\n\n\n");
 {
     Object var_resourcecontent2 = renderContext.call("includeResource", "contexthub", obj().with("resourceType", "granite/contexthub/components/contexthub"));
     out.write(renderContext.getObjectModel().toString(var_resourcecontent2));
 }
-out.write("\r\n");
+out.write("\n");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

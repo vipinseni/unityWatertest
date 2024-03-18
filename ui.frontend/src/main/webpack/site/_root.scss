@@ -14,16 +14,7 @@ html {
 }
 
 body {
-	&.holmesglen-theme{
-		@each $color, $value in $holmesglenColorTheme {
-			--#{$color}: #{$value};
-		}
-	}
-	&.futuretech-theme{
-		@each $color, $value in $futuretechColorTheme {
-			--#{$color}: #{$value};
-		}
-	}
+	
     margin: 0;
     padding: 0;
     font-size: 1rem;
